@@ -4,12 +4,14 @@
   </mat-grid-list>
 <hr>
 <br>
+
+<form #loginForm="ngForm" (ngSubmit)="OnLogin(loginForm.value)">
   <div align="center">
   
     <p>
         <mat-form-field appearance="outline">
           <mat-label>User ID</mat-label>
-          <input matInput placeholder="User ID">
+          <input matInput placeholder="User ID" id="username" name="username" ngModel>
           <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
           <mat-hint>Hint</mat-hint>
         </mat-form-field>
@@ -18,13 +20,16 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Password</mat-label>
-          <input matInput placeholder="Password" type="password">
+          <input matInput placeholder="Password" type="password" id="password" name="password" ngModel>
           <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
           <mat-hint>Hint</mat-hint>
         </mat-form-field>
       </p>
     
       <p>
-       <button mat-flat-button color="warn">Login</button>
+       <button mat-flat-button color="warn" type="submit">
+       Login
+      </button>
       </p>
     </div>
+  </form>
