@@ -1,76 +1,18 @@
 <p>dashboard works!</p>
 <hr>
-
 <div class="row">
     <div class="col-md-3">
-        <mat-form-field>
-            <mat-label>Input</mat-label>
-            <input matInput type="text" id="txtName" name="txtName" [(ngModel)]="txtName">
-        </mat-form-field>  
-        {{txtName}}  
+        <button mat-button color="primary" (click)="ShowDemoComponent()">Demo Component</button>
     </div>
-    <div class="col-md-3"> 
-        <mat-form-field>
-            <mat-label>Select</mat-label>
-            <mat-select [(value)]="selected">
-                <mat-option value="one">First option</mat-option>
-                <mat-option value="two">Second option</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <p>You selected: {{selected}}</p>
+    <div class="col-md-3">
+        <button mat-button color="warn">Warn</button>
     </div>
-    <div class="col-md-3"> 
-        <mat-form-field>
-            <mat-label>Textarea</mat-label>
-            <textarea matInput type="textarea" id="txtArea" name="txtArea" [(ngModel)]="txtArea"></textarea>
-        </mat-form-field>
-        {{txtArea}}
+    <div class="col-md-3">
+        <button mat-button color="alert">Warn</button>
     </div>
-
-
-    <div class="col-md-3"> 
-        <mat-form-field>
-            <mat-label>Enter your password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" type="text" id="pwd" name="pwd" [(ngModel)]="pwd">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-        </mat-form-field>
-        {{pwd}}
+    <div class="col-md-3">
+        <button mat-button color="warn">Warn</button>
     </div>
-
-
-
-<div>
-
-<mat-form-field floatLabel="always">
-    <mat-label>Amount</mat-label>
-    <input matInput type="number" class="example-right-align" placeholder="0" id="txtAmount" name="txtAmount" [(ngModel)]="txtAmount">
-    <span matTextPrefix>$&nbsp;</span>
-    <span matTextSuffix>.00</span>
-</mat-form-field>
-{{txtAmount}}
-<div>
-    <mat-form-field>
-        <mat-label>Choose a date</mat-label>
-        <input matInput [matDatepicker]="picker" id="pickerDate" name="pickerDate"  [(ngModel)]="pickerDate">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker ></mat-datepicker>
-    </mat-form-field>
-    {{pickerDate | date :  "dd/MMM/y" }}
 </div>
-
-<div>
-    <mat-form-field>
-        <mat-label>Choose a date</mat-label>
-        <input matInput [matDatepicker]="picker1" id="pickerDate1" name="pickerDate1"  [(ngModel)]="pickerDate1">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker #picker1></mat-datepicker>
-      </mat-form-field>
-      <button mat-raised-button (click)="picker1.open()">Open</button>
-      {{pickerDate1 | date :  "dd/MMM/y" }}
-</div>
-</div>
-</div>
+<hr>
+<router-outlet></router-outlet>  

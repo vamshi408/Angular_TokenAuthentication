@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,12 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  hide = true;
-  txtName:any;
-  txtArea:any;
-  pwd:any;
-  txtAmount:any;
-  selected : any;
-  pickerDate:any;
-  pickerDate1:any;
+
+  constructor(private route:Router){
+    
+  }
+
+  ShowDemoComponent(){
+    this.route.navigate(['/dashboard/demo']);
+  }
 }

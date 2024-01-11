@@ -1,0 +1,3 @@
+ng add @ng-bootstrap/ng-bootstrap
+npm install @popperjs/core
+npm install @ng-bootstrap/ng-bootstrap
